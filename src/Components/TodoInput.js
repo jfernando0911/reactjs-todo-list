@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './todo.module.css';
 import ListElement from './ListElement';
-import trashIcon from '../Images/trash_icon.png';
 
 
 const TodoInput = () => {
@@ -48,39 +47,22 @@ const TodoInput = () => {
         }
     }
 
-
-   
-    // const classes = `otro`;
-
     return (
         <div>
             <input type="text" onKeyDown={pressedEnterKey} onChange={Changing} placeholder="Type the task" className={styles.todoListInput} />
+           
             <h2>Task to do</h2>
 
             <div className={styles.todoListContainer}>
-                {/* <ul className={styles.listContainer}>
-
-
+                <ul className={styles.listContainer}>
                     {element.map((e, i) => (
-                        <li className={styles.listItemContainer} key={i} onMouseEnter={DeleteListItem} onClick={DeleteListItem} onMouseLeave={DeleteListItem}>
-                            <p>{e}</p>
-                            <img src={trashIcon} alt="trashIcon"/>
+                        <ListElement key={i} name={e} delete={DeleteListItem} />
+                    ))}
 
-                        </li>
-                    )
-                    
-                    )}
-                </ul> */}
+                </ul>
 
             </div>
 
-            <ul>
-                {element.map((e, i)=>(
-                    <ListElement key={i} name={e} delete={DeleteListItem}  />
-                ))}
-            </ul>
-
-            
         </div>
     );
 }

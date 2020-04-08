@@ -1,16 +1,19 @@
 
 .listElementWrapper{
-    margin:0;
+    border-bottom: 3px solid #F2F2F2;
+    margin-bottom: 5px;
 }
 
 .listElementWrapper > li{
-    border: 1px solid black;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    border-radius: 12px;
     
+}
+.listElementWrapper li div{
+    overflow: hidden;
 }
 
 .listElementWrapper li img{
@@ -25,7 +28,7 @@
 }
 
 .listElementWrapper li:hover{
-    background-color: red;
+    background-color: tomato;
     animation: move 0.3s ease-in-out;
 }
 
