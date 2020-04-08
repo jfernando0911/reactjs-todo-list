@@ -1,0 +1,52 @@
+
+.listElementWrapper{
+    margin:0;
+}
+
+.listElementWrapper > li{
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    
+}
+
+.listElementWrapper li img{
+    width: 1em;
+    height: 1em;
+    display: none;
+    animation: trashIconMoving 0.5s;
+}   
+
+.listElementWrapper li:hover img{
+    display: block;
+}
+
+.listElementWrapper li:hover{
+    background-color: red;
+    animation: move 0.3s ease-in-out;
+}
+
+
+@keyframes trashIconMoving{
+    from{
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes move {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+

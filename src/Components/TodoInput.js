@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import styles from './todo.module.css';
+import ListElement from './ListElement';
+import trashIcon from '../Images/trash_icon.png';
 
 
 const TodoInput = () => {
@@ -27,44 +30,57 @@ const TodoInput = () => {
     }
 
     const DeleteListItem = (e) => {
-
-
-        if (e.type === "mouseenter") {
-            console.log("We enter")
-            e.target.style.backgroundColor = "red";
-        } else if (e.type === "mouseleave") {
-            console.log("salimos")
-            e.target.style.backgroundColor = "";
-        }
-        else if (e.type === "click") {
+        console.log(element);
+        if (e.type === "click") {
 
             let getArray = [...element];
             let index = getArray.indexOf(e.target.textContent);
             console.log(index);
-            if(index !== -1){
-                updateDoneTasks([...doneTask,getArray[index]]);
-                getArray.splice(index,1);
+            if (index !== -1) {
+                updateDoneTasks([...doneTask, getArray[index]]);
+                getArray.splice(index, 1);
                 console.log(getArray);
                 // setElements([...element,getArray]);
                 setElements(getArray);
-                
+
             }
 
         }
     }
 
+
+   
+    // const classes = `otro`;
+
     return (
         <div>
-            <input type="text" onKeyDown={pressedEnterKey} onChange={Changing} placeholder="Type the task" />
+            <input type="text" onKeyDown={pressedEnterKey} onChange={Changing} placeholder="Type the task" className={styles.todoListInput} />
+            <h2>Task to do</h2>
+
+            <div className={styles.todoListContainer}>
+                {/* <ul className={styles.listContainer}>
+
+
+                    {element.map((e, i) => (
+                        <li className={styles.listItemContainer} key={i} onMouseEnter={DeleteListItem} onClick={DeleteListItem} onMouseLeave={DeleteListItem}>
+                            <p>{e}</p>
+                            <img src={trashIcon} alt="trashIcon"/>
+
+                        </li>
+                    )
+                    
+                    )}
+                </ul> */}
+
+            </div>
+
             <ul>
-                <h2>Task to do</h2>
-                {element.map((e, i) => <li key={i} onMouseEnter={DeleteListItem} onClick={DeleteListItem} onMouseLeave={DeleteListItem}>{e}</li>)}
-            </ul>
-            <ul>
-                <h2>TaskDone</h2>
-                {doneTask.map((e, i) => <li key={i}>{e}</li>)}
+                {element.map((e, i)=>(
+                    <ListElement key={i} name={e} delete={DeleteListItem}  />
+                ))}
             </ul>
 
+            
         </div>
     );
 }
