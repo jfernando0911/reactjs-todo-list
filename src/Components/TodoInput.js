@@ -6,7 +6,7 @@ import DoneTaskList from './DoneTaskList';
 
 const TodoInput = () => {
     let [inputValue, inputValues] = useState("");
-    const [element, setElements] = useState([]);
+    const [element, setElements] = useState(["Cooking breakfast", "Do homework"]);
     const [doneTask, updateDoneTasks] = useState([]);
 
     const Changing = (e) => {
@@ -49,7 +49,7 @@ const TodoInput = () => {
 
     return (
         <div className={styles.mainContainer}>
-            <input type="text" onKeyDown={pressedEnterKey} onChange={Changing} placeholder="Type the task" className={styles.todoListInput} />
+            <input type="text" onKeyDown={pressedEnterKey} onChange={Changing} placeholder="Type a task" className={styles.todoListInput} />
            
             <h2>Task to do</h2>
 

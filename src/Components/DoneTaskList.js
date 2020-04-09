@@ -9,9 +9,9 @@ const DoneTaskList = ({dt}) => {
     return (
         <div className={styles.doneListContainer}>
             <ul className={styles.doneUlContainer}>
-                <li>Testing 1</li>
+                <li>Lorem ipsus</li>
         
-                <li>Testing 2</li>
+                <li>Lorem ipsus</li>
                 {dt.map((e, i) => <li key={i}>{e}</li>)} 
             </ul>
         </div>

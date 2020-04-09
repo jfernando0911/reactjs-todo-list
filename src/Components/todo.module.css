@@ -1,5 +1,5 @@
 .mainContainer{
-    border: 3px solid green;
+    /* border: 3px solid green; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -9,7 +9,7 @@
 }
 
 .todoListInput{
-    /* margin-top: 20px; */
+    margin-top: 20px;
     height: 64px;
     width: 500px;
     border-radius: 15px;
@@ -19,8 +19,7 @@
     font-size: 1em;
     letter-spacing: 2px;
     font-weight: bold;
-    /* display: block; */
-
+    color: dimgrey;
 }
 
 .todoListInput:focus{
