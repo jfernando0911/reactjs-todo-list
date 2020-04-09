@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './todo.module.css';
 import ListElement from './ListElement';
+import DoneTaskList from './DoneTaskList';
 
 
 const TodoInput = () => {
@@ -39,7 +40,6 @@ const TodoInput = () => {
                 updateDoneTasks([...doneTask, getArray[index]]);
                 getArray.splice(index, 1);
                 console.log(getArray);
-                // setElements([...element,getArray]);
                 setElements(getArray);
 
             }
@@ -48,7 +48,7 @@ const TodoInput = () => {
     }
 
     return (
-        <div>
+        <div className={styles.mainContainer}>
             <input type="text" onKeyDown={pressedEnterKey} onChange={Changing} placeholder="Type the task" className={styles.todoListInput} />
            
             <h2>Task to do</h2>
@@ -62,7 +62,8 @@ const TodoInput = () => {
                 </ul>
 
             </div>
-
+            <h2>Done tasks</h2>
+            <DoneTaskList dt={doneTask}/>
         </div>
     );
 }
