@@ -1,36 +1,103 @@
 
-.listElementWrapper{
-    border-bottom: 3px solid #F2F2F2;
+.listElementContainer{
+    /* border-bottom: 3px solid #F2F2F2; */
+    /* border: 1px solid black; */
     margin-bottom: 5px;
+    animation: appear 500ms;
+    /* height: 25px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.listElementWrapper > li{
+.nameContainer{
+    /* border: 2px solid yellow; */
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.nameContainer div {
+    animation: move 1s;
+}
+
+.deleteContainer{
+    /* border: 2px solid green; */
+    flex-basis: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+}
+
+
+.listElementContainer .deleteContainer img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* animation: trashIconMoving 0.5s; */
+    display: none;
+}
+.listElementContainer:hover .deleteContainer img{
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    animation: trashIconMoving 0.5s;
+}
+
+.listElementContainer:hover{
+    /* display: block; */
+    background-color: tomato;
+}
+
+
+
+
+
+
+
+/* .listElementContainer > li{
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: space-around;
     border-radius: 12px;
     
-}
-.listElementWrapper li div{
-    overflow: hidden;
-}
+} */
+/* .listElementContainer div{ */
+    /* overflow: hidden; */
+    /* font-size: 1em  ; */
+    /* flex-grow: 2; */
+    /* border: 1px solid black; */
+    
+/* } */
 
-.listElementWrapper li img{
-    width: 1em;
-    height: 1em;
-    display: none;
-    animation: trashIconMoving 0.5s;
+/* .listElementContainer:hover{
+    background-color: tomato;
+} */
+/* 
+.listElementContainer img{
+    width: 22px;
+    height: 22px;
+    display: block;
+    border:1px solid black;
+    margin-right: 10px;
+    
 }   
 
-.listElementWrapper li:hover img{
+.listElementContainer img:hover{
     display: block;
-}
+} */
 
-.listElementWrapper li:hover{
+
+
+/* 
+
+.listElementContainer div:hover{
     background-color: tomato;
     animation: move 0.3s ease-in-out;
 }
+ */
 
 
 @keyframes trashIconMoving{
@@ -53,3 +120,12 @@
     }
 }
 
+@keyframes appear{
+    from{
+        transform: translateY(300px);
+    }
+    to{
+        transform: translateY(0);
+        
+    }
+}
