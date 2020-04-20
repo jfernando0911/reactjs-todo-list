@@ -1,15 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './todo.module.css';
 import ListElement from './ListElement';
 import DoneTaskList from './DoneTaskList';
 
-
 const TodoInput = () => {
+    
+    
+
+    let initialElements = localStorage.getItem('todos');
     let [inputValue, inputValues] = useState("");
-    const [element, setElements] = useState(["Cooking breakfast", "Do homework"]);
+    const [element, setElements] = useState(JSON.parse(initialElements) || [])
     const [doneTask, updateDoneTasks] = useState([]);
 
-    const Changing = (e) => {
+    useEffect(() => {
+        localStorage.setItem('todos', [JSON.stringify(element)]);
+        
+      },[element]);
+
+
+    
+  const Changing = (e) => {
         if (e) {
             inputValues(e.target.value);
         }
