@@ -5,11 +5,12 @@ import i from '../Images/trash_icon.png';
 
 const ListElement = (props) => {
     const inputEl = createRef();
-    console.log(props);
+    // console.log(props);
 
     const updateTextDecoration = (e) =>{
-        console.log("Checkbox value: ", e.target.checked);
-        console.log("This is my ref: ", inputEl.current);
+        // console.log("Checkbox value: ", e.target.checked);
+        // console.log("This is my ref: ", inputEl.current);
+        props.getCheckBox(e.target.checked);
         if(e.target.checked === true){
             inputEl.current.style.textDecoration = "line-through";
         }else{
@@ -27,7 +28,7 @@ const ListElement = (props) => {
                 <img src={i} alt={"It's a trash icon"} />
             </div>
             <div className={styles.doneContainer}>
-                <input type="checkbox" onChange={updateTextDecoration} />
+                <input type="checkbox" onChange={updateTextDecoration}  />
             </div>
         </li>
     );
