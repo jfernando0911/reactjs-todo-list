@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './listContainer.module.css';
 
 const DoneTaskList = ({dt}) => {
-    console.log("We are in the doneTaSKlIST", dt);
+    // console.log("We are in the doneTaSKlIST", dt);
     // let listEl = props.doneTask;
 
     //ya podemos agregar items al doneTask Ul
